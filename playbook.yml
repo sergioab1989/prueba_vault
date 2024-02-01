@@ -6,6 +6,11 @@
 
   tasks:
 
+    - name: prueba
+      set_fact:
+        prueba: "{{ clave_prueba }}"
+      no_log: true
+
     - name: prueba variable
       debug:
         msg: "{{ clave_prueba }}"
