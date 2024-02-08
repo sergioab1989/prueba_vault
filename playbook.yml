@@ -6,11 +6,20 @@
 
   tasks:
 
-    - name: prueba
-      set_fact:
-        prueba: "{{ clave_prueba }}"
-      no_log: true
+    - name: bloque tareas configuracion certificado para IIS
+      block:
+      
+        - name: Mostrar resultados
+          debug:
+            msg: "IIS"
 
-    - name: prueba variable
-      debug:
-        msg: "{{ clave_prueba }}"
+      when: "'IIS' in hardening_tipo_servicio"
+
+    - name: bloque tareas configuracion certificado para SQL
+      block:
+
+        - name: Mostrar resultados
+          debug:
+            msg: "SQL"
+
+      when: "'SQL' in hardening_tipo_servicio"
