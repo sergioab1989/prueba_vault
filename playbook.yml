@@ -1,8 +1,7 @@
 ---
 - name: Playbook ansible vault
   hosts: localhost
-  vars_files:
-    - credentials.yaml
+
 
   tasks:
 
